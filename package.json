@@ -1,6 +1,6 @@
 {
 	"name": "esm-gamecontroller.js",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A esm port of gamecontroller.js",
 	"main": "lib/index.js",
 	"module": "lib/index.js",
@@ -31,6 +31,10 @@
 				"build"
 			]
 		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vdegenne/esm-gamecontroller.js.git"
 	},
 	"devDependencies": {
 		"jest": "^29.5.0",

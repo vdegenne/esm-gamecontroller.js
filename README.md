@@ -19,5 +19,9 @@ npm add -D esm-gamecontroller.js
 ## Usage
 
 ```typescript
-import game
+import gameControl, { GCGamepad } from 'esm-gamecontroller.js';
+
+gameControl.on('connect', (gamepad: GCGamepad) => {
+	// May the types lead you young padawan...
+})
 ```

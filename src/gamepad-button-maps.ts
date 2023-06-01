@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-export const Buttons = {
+export const Button = {
 	/**
 	 * button 0
 	 */
@@ -151,7 +151,7 @@ export const Buttons = {
 	LEFT: 'left0',
 } as const;
 
-export const XboxButtons = {
+export const XBoxButton = {
 	/**
 	 * A button.
 	 */
@@ -268,4 +268,4 @@ export const XboxButtons = {
 	 * Right stick left.
 	 */
 	RIGHT_STICK_LEFT: 'left1',
-};
+} as const;

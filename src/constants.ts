@@ -9,4 +9,6 @@ const MESSAGES = {
 	NO_SUPPORT: 'Your web browser does not support the Gamepad API.',
 };
 
+
+
 export {MESSAGES};

@@ -5,4 +5,5 @@ export {MESSAGES} from './constants.js';
 import gameControl from './gamecontrol.js';
 
 export {gameControl};
+export {Buttons, XboxButtons} from './buttons-maps.js';
 export default gameControl;

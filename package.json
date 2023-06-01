@@ -7,7 +7,8 @@
 	"type": "module",
 	"scripts": {
 		"build": "wireit",
-		"test": "wireit"
+		"test": "wireit",
+		"dev": "vite dev/ --host"
 	},
 	"wireit": {
 		"build": {
@@ -39,6 +40,7 @@
 	"devDependencies": {
 		"jest": "^29.5.0",
 		"typescript": "^5.0.4",
+		"vite": "^4.3.9",
 		"wireit": "^0.9.5"
 	},
 	"license": "MIT",

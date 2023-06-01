@@ -1,6 +1,6 @@
 export * from './action.js';
 export * from './axis-actions.js';
-export * from './button-actions.js';
+export * from './gamepad-maps.js';
 export * from './callback.js';
 export * from './connect-callback.js';
 export * from './disconnect-callback.js';

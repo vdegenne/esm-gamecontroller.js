@@ -1,7 +1,10 @@
 import type {GCDirection} from './direction.js';
 import type {GCType} from './type.js';
-import type {GCButtonActions} from './button-actions.js';
+import type {GCButtonActions} from './gamepad-maps.js';
 import type {GCAxisActions} from './axis-actions.js';
+import { Buttons } from '../buttons-maps.js';
+
+type ButtonValues = typeof Buttons[keyof typeof Buttons];
 
 export interface GCGamepad {
 	id: number;
@@ -34,7 +37,6 @@ export interface GCGamepad {
 		callback: () => void,
 		type: GCType
 	): GCGamepad;
-	/** Triggered every cycle, while the button/joystick is pressed/active. */
 	on(eventName: string, callback: () => void): GCGamepad;
 	/** Triggered when button 0 is pressed. */
 	on(eventName: 'button0', callback: () => void): GCGamepad;

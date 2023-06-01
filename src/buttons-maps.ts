@@ -149,143 +149,123 @@ export const Buttons = {
 	 * first axe/joystick left button (alias for left0)
 	 */
 	LEFT: 'left0',
-};
+} as const;
 
 export const XboxButtons = {
 	/**
-	 * A button
+	 * A button.
 	 */
 	A: 'button0',
 	/**
-	 * B button
+	 * B button.
 	 */
 	B: 'button1',
 	/**
-	 * X button
+	 * X button.
 	 */
 	X: 'button2',
 	/**
-	 * Y button
+	 * Y button.
 	 */
 	Y: 'button3',
 	/**
-	 * left bumper
+	 * Left bumper.
 	 */
-	LB: 'button4',
+	LEFT_BUMPER: 'button4',
 	/**
-	 * right bumper
+	 * Right bumper.
 	 */
-	RB: 'button5',
+	RIGHT_BUMPER: 'button5',
 	/**
-	 * start button
+	 * Left trigger.
 	 */
-	START: 'button6',
+	LEFT_TRIGGER: 'button6',
 	/**
-	 * select button
+	 * Right trigger.
 	 */
-	SELECT: 'button7',
+	RIGHT_TRIGGER: 'button7',
 	/**
-	 * button 8 (select button) ??????????
+	 * Start button.
 	 */
-	BUTTON8: 'button8',
+	START: 'button8',
 	/**
-	 * left stick press
+	 * Select button.
 	 */
-	LEFT_STICK_PRESS: 'button9',
+	SELECT: 'button9',
 	/**
-	 * right stick press
+	 * Left stick press.
 	 */
-	RIGHT_STICK_PRESS: 'button10',
+	LEFT_STICK_PRESS: 'button10',
 	/**
-	 * button 11
+	 * Right stick press.
 	 */
-	// BUTTON11: 'button11',
+	RIGHT_STICK_PRESS: 'button11',
 	/**
-	 * button 12
+	 * D-pad (Directional pad) up.
 	 */
-	// BUTTON12: 'button12',
+	DPAD_UP: 'button12',
 	/**
-	 * button 13
+	 * D-pad (Directional pad) down.
 	 */
-	// BUTTON13: 'button13',
+	DPAD_DOWN: 'button13',
 	/**
-	 * button 14
+	 * D-pad (Directional pad) left.
 	 */
-	// BUTTON14: 'button14',
+	DPAD_LEFT: 'button14',
 	/**
-	 * button 15
+	 * D-pad (Directional pad) right.
 	 */
-	// BUTTON15: 'button15',
+	DPAD_RIGHT: 'button15',
 	/**
-	 * button 16
+	 * Guide button.
 	 */
-	// BUTTON16: 'button16',
+	GUIDE: 'button16',
 	/**
-	 * left stick up
+	 * Left stick up.
 	 */
 	LEFT_STICK_UP: 'up0',
 	/**
-	 * left stick down
-	 */
-	LEFT_STICK_DOWN: 'down0',
-	/**
-	 * left stick right
-	 */
-	LEFT_STICK_RIGHT: 'right0',
-	/**
-	 * left stick left
-	 */
-	LEFT_STICK_LEFT: 'left0',
-	/**
-	 * second axe/joystick up button
-	 */
-	UP1: 'up1',
-	/**
-	 * second axe/joystick down button
-	 */
-	DOWN1: 'down1',
-	/**
-	 * second axe/joystick right button
-	 */
-	RIGHT1: 'right1',
-	/**
-	 * second axe/joystick left button
-	 */
-	LEFT1: 'left1',
-	/**
-	 * power button (alias for button16)
-	 */
-	POWER: 'button16',
-	/**
-	 * left back button 1 (alias for button4)
-	 */
-	L1: 'l1',
-	/**
-	 * left back button 2 (alias for button6)
-	 */
-	L2: 'l2',
-	/**
-	 * right back button 1 (alias for button5)
-	 */
-	R1: 'r1',
-	/**
-	 * right back button 2 (alias for button7)
-	 */
-	R2: 'r2',
-	/**
-	 * first axe/joystick up button (alias for up0)
+	 * Left stick up (alias for LEFT_STICK_UP).
 	 */
 	UP: 'up0',
 	/**
-	 * first axe/joystick down button (alias for down0)
+	 * Left stick down.
 	 */
-	DOWN: 'down0',
+	LEFT_STICK_DOWN: 'down0',
 	/**
-	 * first axe/joystick right button (alias for right0)
+	 * Left stick down (alias for LEFT_STICK_DOWN).
+	 */
+	LSD: 'down0',
+	/**
+	 * Left stick right.
+	 */
+	LEFT_STICK_RIGHT: 'right0',
+	/**
+	 * Left stick right (alias for LEFT_STICK_RIGHT).
 	 */
 	RIGHT: 'right0',
 	/**
-	 * first axe/joystick left button (alias for left0)
+	 * Left stick left.
+	 */
+	LEFT_STICK_LEFT: 'left0',
+	/**
+	 * Left stick left (alias for LEFT_STICK_LEFT).
 	 */
 	LEFT: 'left0',
+	/**
+	 * Right stick up.
+	 */
+	RIGHT_STICK_UP: 'up1',
+	/**
+	 * Right stick down.
+	 */
+	RIGHT_STICK_DOWN: 'down1',
+	/**
+	 * Right stick right.
+	 */
+	RIGHT_STICK_RIGHT: 'right1',
+	/**
+	 * Right stick left.
+	 */
+	RIGHT_STICK_LEFT: 'left1',
 };

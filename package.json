@@ -1,0 +1,58 @@
+{
+	"name": "esm-gamecontroller.js",
+	"version": "1.0.0",
+	"description": "A esm port of gamecontroller.js",
+	"main": "lib/index.js",
+	"module": "lib/index.js",
+	"type": "module",
+	"scripts": {
+		"build": "wireit",
+		"test": "wireit"
+	},
+	"wireit": {
+		"build": {
+			"command": "tsc --pretty",
+			"clean": "if-file-deleted",
+			"files": [
+				"tsconfig.json",
+				"src"
+			],
+			"output": [
+				"lib"
+			]
+		},
+		"test": {
+			"command": "jest --coverage",
+			"files": [
+				"tests",
+				"jest.config.cjs"
+			],
+			"dependencies": [
+				"build"
+			]
+		}
+	},
+	"devDependencies": {
+		"jest": "^29.5.0",
+		"typescript": "^5.0.4",
+		"wireit": "^0.9.5"
+	},
+	"license": "MIT",
+	"keywords": [
+		"game control",
+		"gamepad",
+		"game controller",
+		"game control",
+		"controller",
+		"gaming",
+		"web api",
+		"html5 api",
+		"gamepad api"
+	],
+	"files": [
+		"/lib"
+	],
+	"directories": {
+		"test": "tests"
+	}
+}

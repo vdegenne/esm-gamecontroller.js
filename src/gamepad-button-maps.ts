@@ -106,13 +106,13 @@ export const Button = {
 	 */
 	LEFT1: 'left1',
 	/**
+	 * select button (alias for button8)
+	 */
+	BACK: 'button8',
+	/**
 	 * start button (alias for button9)
 	 */
 	START: 'button9',
-	/**
-	 * select button (alias for button8)
-	 */
-	SELECT: 'button8',
 	/**
 	 * power button (alias for button16)
 	 */

@@ -108,7 +108,7 @@ export const Button = {
 	/**
 	 * select button (alias for button8)
 	 */
-	BACK: 'button8',
+	SELECT: 'button8',
 	/**
 	 * start button (alias for button9)
 	 */
@@ -187,11 +187,11 @@ export const XBoxButton = {
 	/**
 	 * Start button.
 	 */
-	START: 'button8',
+	BACK: 'button8',
 	/**
 	 * Select button.
 	 */
-	SELECT: 'button9',
+	START: 'button9',
 	/**
 	 * Left stick press.
 	 */

@@ -10,13 +10,15 @@ import type {
 	GCDisconnectCallback,
 } from './types/index.js';
 
-declare global {
-	interface Window {
-		gamepads: {
-			[id: number]: Gamepad;
-		};
-	}
-}
+// declare global {
+// 	interface Window {
+// 		gamepads: {
+// 			[id: number]: Gamepad;
+// 		};
+// 	}
+// }
+
+const gamepads: {[id: number]: Gamepad} = {};
 
 const gameControl: GameControl = {
 	gamepads: {} as GCGamepads,
@@ -82,10 +84,10 @@ const gameControl: GameControl = {
 			const egp: GamepadEvent['gamepad'] =
 				e.gamepad || (e as any).detail.gamepad;
 			log(MESSAGES.ON);
-			if (!window.gamepads) window.gamepads = {};
+			// if (!gamepads) window.gamepads = {};
 			if (egp) {
-				if (!window.gamepads[egp.index]) {
-					window.gamepads[egp.index] = egp;
+				if (!gamepads[egp.index]) {
+					gamepads[egp.index] = egp;
 					const gp = gamepad.init(egp);
 					gp.set('axeThreshold', this.axeThreshold);
 					this.gamepads[gp.id] = gp;
@@ -98,7 +100,7 @@ const gameControl: GameControl = {
 			const egp = e.gamepad || (e as any).detail.gamepad;
 			log(MESSAGES.OFF);
 			if (egp) {
-				delete window.gamepads[egp.index];
+				delete gamepads[egp.index];
 				delete this.gamepads[egp.index];
 				this.onDisconnect(egp.index);
 			}

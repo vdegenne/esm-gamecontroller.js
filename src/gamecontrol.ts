@@ -1,6 +1,6 @@
 import {log, error, isGamepadSupported} from './tools.js';
 import {MESSAGES} from './constants.js';
-import gamepad from './gamepad.js';
+import _gamepad from './gamepad.js';
 import type {
 	GameControl,
 	GCGamepads,
@@ -18,7 +18,7 @@ import type {
 // 	}
 // }
 
-const gamepads: {[id: number]: Gamepad} = {};
+const gamepads: (Gamepad | null)[] = [null, null, null, null];
 
 const gameControl: GameControl = {
 	gamepads: {} as GCGamepads,
@@ -80,31 +80,75 @@ const gameControl: GameControl = {
 		}
 	},
 	init: function () {
-		window.addEventListener('gamepadconnected', (e) => {
-			const egp: GamepadEvent['gamepad'] =
-				e.gamepad || (e as any).detail.gamepad;
-			log(MESSAGES.ON);
-			// if (!gamepads) window.gamepads = {};
-			if (egp) {
-				if (!gamepads[egp.index]) {
-					gamepads[egp.index] = egp;
-					const gp = gamepad.init(egp);
-					gp.set('axeThreshold', this.axeThreshold);
-					this.gamepads[gp.id] = gp;
-					this.onConnect(this.gamepads[gp.id]);
-				}
-				if (Object.keys(this.gamepads).length === 1) this.checkStatus();
+		const onConnect = (gamepad: Gamepad, index: number) => {
+			// log(MESSAGES.ON);
+			if (gamepad.index !== index) {
+				console.warn('Something not quite right here.');
 			}
-		});
-		window.addEventListener('gamepaddisconnected', (e) => {
-			const egp = e.gamepad || (e as any).detail.gamepad;
-			log(MESSAGES.OFF);
-			if (egp) {
-				delete gamepads[egp.index];
-				delete this.gamepads[egp.index];
-				this.onDisconnect(egp.index);
+			console.log(`${gamepad.id} just got connected.`);
+			gamepads[index] = gamepad;
+			const gcgamepad = _gamepad.init(gamepad);
+			gcgamepad.set('axeThreshold', this.axeThreshold);
+			this.gamepads[gcgamepad.id] = gcgamepad;
+			this.onConnect(this.gamepads[gcgamepad.id]);
+			if (Object.keys(this.gamepads).length === 1) this.checkStatus();
+		};
+		const onDisconnect = (index: number) => {
+			// log(MESSAGES.OFF);
+			const gamepad = gamepads[index] as Gamepad;
+			if (gamepad.index !== index) {
+				console.warn('Something not quite right here.');
 			}
-		});
+			console.log(`${gamepad.id} got disconnected.`);
+			gamepads[index] = null;
+			delete this.gamepads[index];
+			this.onDisconnect(index);
+		};
+		let detectGamepadChangesFunctionDebouncer: NodeJS.Timeout;
+		function detectGamepadChangesFunction() {
+			if (detectGamepadChangesFunctionDebouncer) {
+				clearTimeout(detectGamepadChangesFunctionDebouncer);
+			}
+			detectGamepadChangesFunctionDebouncer = setTimeout(() => {
+				navigator.getGamepads().forEach((gamepad, index) => {
+					if (gamepad !== null && gamepads[index] === null) {
+						onConnect(gamepad, index);
+					} else if (gamepad === null && gamepads[index] !== null) {
+						onDisconnect(index);
+					}
+				});
+			}, 40);
+		}
+		window.addEventListener('gamepadconnected', detectGamepadChangesFunction);
+		window.addEventListener(
+			'gamepaddisconnected',
+			detectGamepadChangesFunction
+		);
+		setInterval(detectGamepadChangesFunction, 700);
+		detectGamepadChangesFunction();
+		// window.addEventListener('gamepadconnected', (e) => {
+		// 	// const egp: GamepadEvent['gamepad'] =
+		// 	// 	e.gamepad || (e as any).detail.gamepad;
+		// 	// if (!gamepads) window.gamepads = {};
+		// 	// if (egp) {
+		// 	if (!gamepads[egp.index]) {
+		// 		gamepads[egp.index] = egp;
+		// 		const gp = _gamepad.init(egp);
+		// 		gp.set('axeThreshold', this.axeThreshold);
+		// 		this.gamepads[gp.id] = gp;
+		// 		this.onConnect(this.gamepads[gp.id]);
+		// 	}
+		// 	if (Object.keys(this.gamepads).length === 1) this.checkStatus();
+		// 	// }
+		// });
+		// window.addEventListener('gamepaddisconnected', (e) => {
+		// 	const egp = e.gamepad || (e as any).detail.gamepad;
+		// 	if (egp) {
+		// 		delete gamepads[egp.index];
+		// 		delete this.gamepads[egp.index];
+		// 		this.onDisconnect(egp.index);
+		// 	}
+		// });
 	},
 	on: function (
 		eventName: string,

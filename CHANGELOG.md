@@ -1,5 +1,23 @@
 # esm-gamecontroller.js
 
+## 2.2.0
+
+### Minor Changes
+
+- Add states.js utility
+
+## 2.1.1
+
+### Patch Changes
+
+- preserve gamepad event listeners
+
+## 2.1.0
+
+### Minor Changes
+
+- better detection (poll)
+
 ## 2.0.0
 
 ### Major Changes

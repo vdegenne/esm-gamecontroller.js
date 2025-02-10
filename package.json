@@ -1,6 +1,6 @@
 {
 	"name": "esm-gamecontroller.js",
-	"version": "2.2.0",
+	"version": "2.2.1",
 	"description": "A esm port of gamecontroller.js",
 	"main": "lib/index.js",
 	"module": "lib/index.js",

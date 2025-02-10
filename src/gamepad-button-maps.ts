@@ -235,7 +235,7 @@ export const XBoxButton = {
 	/**
 	 * Left stick down (alias for LEFT_STICK_DOWN).
 	 */
-	LSD: 'down0',
+	DOWN: 'down0',
 	/**
 	 * Left stick right.
 	 */

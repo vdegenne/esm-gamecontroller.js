@@ -1,5 +1,11 @@
 # esm-gamecontroller.js
 
+## 2.2.1
+
+### Patch Changes
+
+- add DOWN to XBox controller map
+
 ## 2.2.0
 
 ### Minor Changes

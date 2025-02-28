@@ -1,5 +1,11 @@
 # esm-gamecontroller.js
 
+## 2.3.0
+
+### Minor Changes
+
+- change XBoxButton buttons map to an enum
+
 ## 2.2.1
 
 ### Patch Changes

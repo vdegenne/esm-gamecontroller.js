@@ -151,121 +151,121 @@ export const Button = {
 	LEFT: 'left0',
 } as const;
 
-export const XBoxButton = {
+export enum XBoxButton {
 	/**
 	 * A button.
 	 */
-	A: 'button0',
+	A = 'button0',
 	/**
 	 * B button.
 	 */
-	B: 'button1',
+	B = 'button1',
 	/**
 	 * X button.
 	 */
-	X: 'button2',
+	X = 'button2',
 	/**
 	 * Y button.
 	 */
-	Y: 'button3',
+	Y = 'button3',
 	/**
 	 * Left bumper.
 	 */
-	LEFT_BUMPER: 'button4',
+	LEFT_BUMPER = 'button4',
 	/**
 	 * Right bumper.
 	 */
-	RIGHT_BUMPER: 'button5',
+	RIGHT_BUMPER = 'button5',
 	/**
 	 * Left trigger.
 	 */
-	LEFT_TRIGGER: 'button6',
+	LEFT_TRIGGER = 'button6',
 	/**
 	 * Right trigger.
 	 */
-	RIGHT_TRIGGER: 'button7',
+	RIGHT_TRIGGER = 'button7',
 	/**
 	 * Start button.
 	 */
-	BACK: 'button8',
+	BACK = 'button8',
 	/**
 	 * Select button.
 	 */
-	START: 'button9',
+	START = 'button9',
 	/**
 	 * Left stick press.
 	 */
-	LEFT_STICK_PRESS: 'button10',
+	LEFT_STICK_PRESS = 'button10',
 	/**
 	 * Right stick press.
 	 */
-	RIGHT_STICK_PRESS: 'button11',
+	RIGHT_STICK_PRESS = 'button11',
 	/**
 	 * D-pad (Directional pad) up.
 	 */
-	DPAD_UP: 'button12',
+	DPAD_UP = 'button12',
 	/**
 	 * D-pad (Directional pad) down.
 	 */
-	DPAD_DOWN: 'button13',
+	DPAD_DOWN = 'button13',
 	/**
 	 * D-pad (Directional pad) left.
 	 */
-	DPAD_LEFT: 'button14',
+	DPAD_LEFT = 'button14',
 	/**
 	 * D-pad (Directional pad) right.
 	 */
-	DPAD_RIGHT: 'button15',
+	DPAD_RIGHT = 'button15',
 	/**
 	 * Guide button.
 	 */
-	GUIDE: 'button16',
+	GUIDE = 'button16',
 	/**
 	 * Left stick up.
 	 */
-	LEFT_STICK_UP: 'up0',
+	LEFT_STICK_UP = 'up0',
 	/**
 	 * Left stick up (alias for LEFT_STICK_UP).
 	 */
-	UP: 'up0',
+	UP = 'up0',
 	/**
 	 * Left stick down.
 	 */
-	LEFT_STICK_DOWN: 'down0',
+	LEFT_STICK_DOWN = 'down0',
 	/**
 	 * Left stick down (alias for LEFT_STICK_DOWN).
 	 */
-	DOWN: 'down0',
+	DOWN = 'down0',
 	/**
 	 * Left stick right.
 	 */
-	LEFT_STICK_RIGHT: 'right0',
+	LEFT_STICK_RIGHT = 'right0',
 	/**
 	 * Left stick right (alias for LEFT_STICK_RIGHT).
 	 */
-	RIGHT: 'right0',
+	RIGHT = 'right0',
 	/**
 	 * Left stick left.
 	 */
-	LEFT_STICK_LEFT: 'left0',
+	LEFT_STICK_LEFT = 'left0',
 	/**
 	 * Left stick left (alias for LEFT_STICK_LEFT).
 	 */
-	LEFT: 'left0',
+	LEFT = 'left0',
 	/**
 	 * Right stick up.
 	 */
-	RIGHT_STICK_UP: 'up1',
+	RIGHT_STICK_UP = 'up1',
 	/**
 	 * Right stick down.
 	 */
-	RIGHT_STICK_DOWN: 'down1',
+	RIGHT_STICK_DOWN = 'down1',
 	/**
 	 * Right stick right.
 	 */
-	RIGHT_STICK_RIGHT: 'right1',
+	RIGHT_STICK_RIGHT = 'right1',
 	/**
 	 * Right stick left.
 	 */
-	RIGHT_STICK_LEFT: 'left1',
-} as const;
+	RIGHT_STICK_LEFT = 'left1',
+}

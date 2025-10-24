@@ -1,14 +1,14 @@
 {
 	"compilerOptions": {
 		"target": "ESNext",
-		"module": "ESNext",
-		"moduleResolution": "node",
+		"module": "NodeNext",
+		"moduleResolution": "nodenext",
 		"declaration": true,
 		"sourceMap": true,
 		"strict": true,
-		"rootDir": "src",
-		"outDir": "lib"
+		"rootDir": "./src",
+		"outDir": "./lib"
 	},
-	"include": ["src/**/*"],
+	"include": ["./src/**/*"],
 	"exclude": []
 }

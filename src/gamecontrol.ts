@@ -88,6 +88,7 @@ const gameControl: GameControl = {
 			console.log(`${gamepad.id} just got connected.`);
 			gamepads[index] = gamepad;
 			const gcgamepad = _gamepad.init(gamepad);
+			gcgamepad.modelName = gamepad.id;
 			gcgamepad.set('axeThreshold', this.axeThreshold);
 			this.gamepads[gcgamepad.id] = gcgamepad;
 			this.onConnect(this.gamepads[gcgamepad.id]);

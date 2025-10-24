@@ -9,3 +9,4 @@ export {Button, XBoxButton} from './gamepad-button-maps.js';
 export default gameControl;
 
 export * from './states.js';
+export * from './gamepads/index.js';

@@ -44,4 +44,6 @@ export interface GCGamepad {
 	before(eventName: EventName, callback: () => void): GCGamepad | void;
 	/** Triggered the first cycle after a button/joystick stopped being pressed. */
 	after(eventName: EventName, callback: () => void): GCGamepad | void;
+
+	modelName?: string;
 }

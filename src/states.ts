@@ -1,4 +1,4 @@
-import {type GCGamepad} from './types';
+import {type GCGamepad} from './types/index.js';
 
 export enum Modes {
 	NORMAL = 0,

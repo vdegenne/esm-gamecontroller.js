@@ -114,7 +114,7 @@ const gameControl: GameControl = {
 				navigator.getGamepads().forEach((gamepad, index) => {
 					if (gamepad !== null && gamepads[index] === null) {
 						onConnect(gamepad, index);
-					} else if (gamepad === null && gamepads[index] !== null) {
+					} else if (gamepad === null && gamepads[index]) {
 						onDisconnect(index);
 					}
 				});
